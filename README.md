@@ -1,17 +1,30 @@
-# Secured-V2I-Application
+# Secured-CAN-Network-Application
 
-`Secured-V2I-Application` is two-way application to apply V2I communications technology using TCP/IP model and WiFi available technoolgy, designed and developed into 2 parts.
+`# Secured-CAN-Network-Application` is application for CAN network communications to enable real-time communication over CAN bus between different microcontrollers, designed and developed for 2 targets
+First, **Raspberry Pi with MCP2515 CAN controller**. 
+Second, **STM32F1x with MCP2551 CAN transceiver**
+
 This application is part of the **Secured V2X Enabled Autoparking System Graduation Project**, mentored by **Valeo**.
 
-First part, **V2I Server - Infrastructure** is run on STM32F4x micrcontroller based on STM HAL libraries. 
-
 ## Features
-- Act as WiFi Access Point for vehiceles WiFi stations, using ESP8266 hardware module connected to STM32Fx via UART-based communications.
-- Manage all incoming clients requests connected to the WiFi local network and exchange data with clients.
-- Provide connected clients with different types of services.
-- Support high level of security by using RSA cryptosystem and SHA256 hash algorithm for the exchanged messages.
+- Real-time communications between different micrcontrollers via CAN bus.
+- Support messages up to size of 116 bytes.
+- Support high level of security by using AES cryptosystem and SHA256 hash algorithm for the exchanged messages.
+- Handle all exchanged messages asynchronously.
+
+---
 
 ## Components
+*1- For STM32F1x*
+	- CAN handler, based on STM HAL libraries.
+ 	- CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**
+  	- CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
+  
+*2- For Raspberry Pi*
+	- CAN handler, based on can-utils library acts as a wrapper for it.
+ 	- CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**
+  	- CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
+   
 - Cryptography stack files utilizing WolfSSL open-source crypto library functions.
 - ESP8266 hardware module driver.
 - V2I Server Manager -> Application module.
@@ -19,25 +32,7 @@ First part, **V2I Server - Infrastructure** is run on STM32F4x micrcontroller ba
 ## External Dependencies
 - WolfSSL open-source crypto library
 - STM HAL libraries
-
----
-
-Second part, **V2I Client - Vehicle** is installed and run on Raspbian, a Linux Debian distribution. running on Raspberry Pi microcontroller.
-
-## Features
-- Act as WiFi station using WiFi hardware on Raspberry Pi microcontroller to connect to Infrastructures Access Points.
-- Request needded services such as parking requests and provide neccessary data.
-- Support high level of security by using RSA cryptosystem and SHA256 hash algorithm for the exchanged messages.
-
-## Components
-- Cryptography stack files utilizing WolfSSL open-source crypto library functions.
-- WiFi manager module to control Raspberry Pi WiFi hardware.
-- TCP Client module that utilizes Unix sockets libraries for TCP.
-- V2I Client -> Application module.
-
-## External Dependencies
-- WolfSSL open-source crypto library
-- network manager for Linux
+- can-utils library
 
 ---
 
@@ -45,16 +40,14 @@ Second part, **V2I Client - Vehicle** is installed and run on Raspbian, a Linux 
 - pthread library for Linux on Raspberry Pi
 - Interrupts by NVIC on STM32F4x microcontrollers
 
----
-
 **NOTE:** cryptography keys need to be configured. 
 
 ---
 
 **Authors:**
 	Ahmed Desoky,
-  Omar Tolba
+  	Ziad Emad
 	
 **Emails:**
 	ahmed0201150@gmail.com,
-	omartolba004@gmail.com
+	ziademadh7@gmail.com
