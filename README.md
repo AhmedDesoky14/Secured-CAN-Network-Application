@@ -34,7 +34,7 @@ This application is part of the **Secured V2X Enabled Autoparking System Graduat
 
 **All communications and data exchange are handled asynchronously using:**
 - pthread library for Linux on Raspberry Pi
-- Interrupts by NVIC on STM32F4x microcontrollers
+- Interrupts by NVIC on STM32F1x microcontrollers
 
 **NOTE:** cryptography keys need to be configured. 
 
