@@ -24,10 +24,6 @@ This application is part of the **Secured V2X Enabled Autoparking System Graduat
 	- CAN handler, based on can-utils library, acts as a wrapper for it.
  	- CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**
   	- CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
-   
-- Cryptography stack files utilizing WolfSSL open-source crypto library functions.
-- ESP8266 hardware module driver.
-- V2I Server Manager -> Application module.
 
 ## External Dependencies
 - WolfSSL open-source crypto library
