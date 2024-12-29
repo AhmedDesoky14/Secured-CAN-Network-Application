@@ -16,14 +16,14 @@ This application is part of the **Secured V2X Enabled Autoparking System Graduat
 
 ## Components
 *1- For STM32F1x*
-	- CAN handler, based on STM HAL libraries, acts as a wrapper for CAN STM sHAL library.\n
- 	- CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**\n
-  	- CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
+	# CAN handler, based on STM HAL libraries, acts as a wrapper for CAN STM sHAL library.
+ 	# CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**
+  	# CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
   
 *2- For Raspberry Pi*
-	- CAN handler, based on can-utils library, acts as a wrapper for it.\n
- 	- CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**\n
-  	- CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
+	# CAN handler, based on can-utils library, acts as a wrapper for it.\n
+ 	# CAN Tansport Protocol. Implementation of CAN TP (ISO 15765-2) for CAN segmentation and assembly. **Tareget independent.**
+  	# CAN Service Manager. CAN application APIs with the ability and option to encrypt the messages using the implemented Cryptography stack. **Tareget independent.**
 
 ## External Dependencies
 - WolfSSL open-source crypto library
